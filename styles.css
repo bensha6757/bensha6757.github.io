@@ -151,9 +151,8 @@ a:hover { color: var(--accent); }
 
 .content {
   width: 100%;
-  max-width: 50rem;
-  padding: clamp(2.5rem, 7dvh, 5rem) var(--pad) 3rem;
-  margin-inline: clamp(0rem, 3vw, 4rem) auto;
+  max-width: 56rem;
+  padding: clamp(2.5rem, 7dvh, 5rem) var(--pad) 3rem calc(var(--pad) + clamp(0rem, 3vw, 4rem));
 }
 
 /* ---------- About ---------- */
@@ -352,7 +351,7 @@ a:hover { color: var(--accent); }
   .panel-id { grid-area: id; }
   .portrait { grid-area: photo; width: 100%; }
   .panel-links { grid-area: links; align-self: end; margin-top: 0; flex-direction: column; gap: 0.45rem; }
-  .content { max-width: 46rem; margin-inline: auto; padding-top: 2.5rem; }
+  .content { max-width: 46rem; margin-inline: auto; padding: 2.5rem var(--pad) 3rem; }
 }
 
 @media (max-width: 560px) {
