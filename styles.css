@@ -1,0 +1,367 @@
+/* Ben Shapira. Static page: no scripts, no motion.
+   Identity comes from the portrait: navy panel, one bougainvillea-pink accent.
+   Shape rule: panels and the portrait use --radius; tags and buttons are pills. */
+
+:root {
+  --panel: #131b31;
+  --panel-ink: #eef0f5;
+  --panel-mute: #a7afc2;
+  --panel-accent: #f08bb0;
+
+  --bg: #f3f4f1;
+  --surface: #fbfbf9;
+  --ink: #131b31;
+  --text: #3a4257;
+  --mute: #5e667c;
+  --line: rgba(19, 27, 49, 0.14);
+  --accent: #b8245f;
+  --accent-soft: rgba(184, 36, 95, 0.1);
+
+  --radius: 14px;
+  --display: "Bricolage Grotesque", "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sans: "Geist", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --pad: clamp(1.25rem, 0.5rem + 3.2vw, 2.75rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1220;
+    --surface: #131b31;
+    --ink: #eef0f5;
+    --text: #c0c7d6;
+    --mute: #8f98ad;
+    --line: rgba(238, 240, 245, 0.14);
+    --accent: #f08bb0;
+    --accent-soft: rgba(240, 139, 176, 0.14);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; height: auto; }
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+::selection { background: var(--accent); color: #fff; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 10;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+.skip:focus { top: 0.75rem; color: #fff; }
+
+/* ---------- Layout: fixed identity panel + scrolling content ---------- */
+
+.page {
+  display: grid;
+  grid-template-columns: clamp(19rem, 32vw, 28rem) minmax(0, 1fr);
+  min-height: 100dvh;
+}
+
+.panel {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 3dvh, 2rem);
+  padding: clamp(1.75rem, 4.5dvh, 2.75rem) clamp(1.75rem, 2.6vw, 2.5rem);
+  background: var(--panel);
+  color: var(--panel-ink);
+}
+
+.panel h1 {
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 1.3rem + 2.1vw, 3rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.role {
+  margin-top: 0.6rem;
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  color: var(--panel-mute);
+}
+
+/* The portrait keeps its own 734 x 1176 crop. Its width shrinks on short
+   screens so the whole panel still fits in one viewport. */
+.portrait {
+  width: min(100%, calc((100dvh - 17.5rem) * 0.624));
+  aspect-ratio: 734 / 1176;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: #1c2643;
+}
+
+.panel-links {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.4rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+.panel-links a {
+  color: var(--panel-ink);
+  text-decoration-color: var(--panel-accent);
+}
+.panel-links a:hover { color: var(--panel-accent); }
+.panel :focus-visible { outline-color: var(--panel-accent); }
+
+.content {
+  width: 100%;
+  max-width: 50rem;
+  padding: clamp(2.5rem, 7dvh, 5rem) var(--pad) 3rem;
+  margin-inline: clamp(0rem, 3vw, 4rem) auto;
+}
+
+/* ---------- About ---------- */
+
+.lead {
+  font-family: var(--display);
+  font-size: clamp(1.7rem, 1.05rem + 1.9vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  max-width: 27ch;
+  text-wrap: balance;
+}
+.prose { margin-top: clamp(1.75rem, 4dvh, 2.5rem); max-width: 62ch; }
+.prose p + p { margin-top: 1.1rem; }
+
+/* ---------- Sections ---------- */
+
+.block { margin-top: clamp(4rem, 9dvh, 6rem); scroll-margin-top: 2rem; }
+.block > h2 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- Latest writing ---------- */
+
+.post {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+}
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.75rem;
+  font-size: 0.9375rem;
+  color: var(--mute);
+}
+.tag {
+  display: inline-block;
+  padding: 0.1rem 0.65rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.post-title {
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 1.15rem + 1.7vw, 2.3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0.9rem 0 1rem;
+  max-width: 26ch;
+  text-wrap: balance;
+}
+.post-title a { text-decoration-color: transparent; }
+.post-title a:hover { text-decoration-color: var(--accent); }
+.post-summary { max-width: 60ch; }
+
+.facts {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 1.5rem clamp(1.5rem, 4vw, 3rem);
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+}
+.fact--main { grid-row: span 2; }
+.fact dt {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.fact--main dt { font-size: clamp(2.6rem, 1.8rem + 3vw, 3.75rem); line-height: 1; color: var(--accent); }
+.fact dd { margin-top: 0.4rem; font-size: 0.9375rem; line-height: 1.55; color: var(--mute); max-width: 34ch; }
+.fact--main dd { margin-top: 0.7rem; }
+
+.post-cta { margin-top: 2rem; font-size: 0.9375rem; color: var(--mute); }
+.button {
+  display: inline-block;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.button:hover { background: var(--accent); color: #fff; }
+.button:active { transform: translateY(1px); }
+
+/* ---------- Research path ---------- */
+
+.path { position: relative; padding-left: 1.9rem; }
+.path::before {
+  content: "";
+  position: absolute;
+  left: 0.3rem;
+  top: 0.55rem;
+  bottom: 0.5rem;
+  width: 1.5px;
+  background: var(--line);
+}
+.step { position: relative; }
+.step + .step { margin-top: 2.25rem; }
+.step::before {
+  content: "";
+  position: absolute;
+  left: -1.9rem;
+  top: 0.4rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1.5px solid var(--mute);
+}
+.step--now::before { background: var(--accent); border-color: var(--accent); }
+.step-when { font-size: 0.875rem; font-weight: 500; line-height: 1.5; color: var(--mute); }
+.step--now .step-when { color: var(--accent); }
+.step h3 {
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0.1rem 0 0.4rem;
+}
+.step > p:last-child { max-width: 62ch; }
+
+/* ---------- Publications ---------- */
+
+.pubs li + li { margin-top: 1.9rem; }
+.pubs h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  max-width: 56ch;
+}
+.pubs h3 a { text-decoration-color: transparent; }
+.pubs h3 a:hover { text-decoration-color: var(--accent); color: var(--ink); }
+.authors { margin-top: 0.3rem; font-size: 0.9375rem; line-height: 1.55; color: var(--mute); max-width: 68ch; }
+.authors b { color: var(--ink); font-weight: 600; }
+.pub-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.1rem;
+  margin-top: 0.4rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.talks { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+.talks-h { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 1rem; }
+.talks-list li + li { margin-top: 1.25rem; }
+.talk-title { color: var(--ink); line-height: 1.5; max-width: 60ch; }
+
+/* ---------- Footer ---------- */
+
+.foot { margin-top: clamp(4rem, 9dvh, 6rem); font-size: 0.875rem; color: var(--mute); }
+
+/* ---------- Narrow screens: the panel becomes a header block ---------- */
+
+@media (max-width: 899px) {
+  .page { display: block; }
+  .panel {
+    position: static;
+    height: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(7.5rem, 34vw, 11rem);
+    grid-template-areas: "id photo" "links photo";
+    align-items: start;
+    gap: 1.25rem 1.5rem;
+    padding: 1.75rem var(--pad);
+  }
+  .panel-id { grid-area: id; }
+  .portrait { grid-area: photo; width: 100%; }
+  .panel-links { grid-area: links; align-self: end; margin-top: 0; flex-direction: column; gap: 0.45rem; }
+  .content { max-width: 46rem; margin-inline: auto; padding-top: 2.5rem; }
+}
+
+@media (max-width: 560px) {
+  .facts { grid-template-columns: minmax(0, 1fr); }
+  .fact--main { grid-row: auto; }
+}
+
+@media print {
+  .page { display: block; }
+  .panel { position: static; height: auto; background: none; color: #000; }
+  .skip { display: none; }
+}

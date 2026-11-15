@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Ben Shapira - AI researcher</title>
+<meta name="description" content="Ben Shapira is an AI researcher working on foundation models and weight-space prediction: models whose output is another model. Previously at IBM Research.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ben Shapira - AI researcher">
+<meta property="og:description" content="AI researcher working on foundation models and weight-space prediction. Previously at IBM Research.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@Bensha6757">
+<meta name="theme-color" content="#131b31">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23131b31'/%3E%3Ctext x='16' y='22.5' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' text-anchor='middle' fill='%23f08bb0'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+
+<div class="page">
+
+  <header class="panel">
+    <div class="panel-id">
+      <h1>Ben Shapira</h1>
+      <p class="role">AI researcher</p>
+    </div>
+    <img class="portrait" src="assets/ben.jpg" width="734" height="1176" alt="Portrait of Ben Shapira">
+    <ul class="panel-links" aria-label="Profiles">
+      <li><a href="https://scholar.google.com/citations?user=-m0Uq80AAAAJ&amp;hl=en" rel="me noopener">Google Scholar</a></li>
+      <li><a href="https://x.com/Bensha6757" rel="me noopener">X</a></li>
+      <li><a href="https://www.linkedin.com/in/benshapiraa/" rel="me noopener">LinkedIn</a></li>
+    </ul>
+  </header>
+
+  <main class="content" id="content">
+
+    <section class="about" aria-labelledby="about-h">
+      <h2 class="visually-hidden" id="about-h">About</h2>
+      <p class="lead">I work on foundation models. Lately, that means models whose output is another model.</p>
+      <div class="prose">
+        <p>My current research is weight-space prediction: training neural networks to generate the weights of other networks. Teaching a model a new task usually means fine-tuning it over thousands of gradient steps. I study whether a second model can learn that process and produce the result directly, from a short description of the task or a handful of examples.</p>
+        <p>Before this, I was at IBM Research, where I worked on foundation models. I started in drug discovery, on protein language models (<a href="https://arxiv.org/abs/2410.22367">MAMMAL</a>) and on diffusion models for structure prediction and design, and later joined the Granite Vision team, working on the vision-language model of the IBM Granite family. A recurring theme was getting different modalities to work together inside one model.</p>
+        <p>I did my MSc at Tel Aviv University, on adversarial machine learning and the robustness of face recognition (<a href="https://arxiv.org/abs/2609.23596">StyleAT</a>, BMVC 2026).</p>
+      </div>
+    </section>
+
+    <section class="block" id="writing" aria-labelledby="writing-h">
+      <h2 id="writing-h">Latest writing</h2>
+      <article class="post">
+        <p class="post-meta"><span class="tag">New</span> November 2026, with Roi Cohen</p>
+        <!-- POST LINK: when the post is live, wrap the title text in <a href="URL">...</a>
+             and replace the "Coming soon" line at the bottom with:
+             <p class="post-cta"><a class="button" href="URL">Read the post</a></p> -->
+        <h3 class="post-title">Can we compress backpropagation into a model?</h3>
+        <p class="post-summary">Fine-tuning teaches a model a new task through thousands of gradient steps. We trained a meta-model to skip them: it reads a one-paragraph description of a task, or a handful of examples, and writes the weight update for a base model in a single pass.</p>
+        <!-- NUMBERS: taken from the first draft of the post. Check against the published version. -->
+        <dl class="facts">
+          <div class="fact fact--main">
+            <dt>41 of 75</dt>
+            <dd>public benchmarks where an update written from one paragraph beats the base model given that same paragraph as its prompt.</dd>
+          </div>
+          <div class="fact">
+            <dt>50.0 → 92.4</dt>
+            <dd>percent accuracy on ComVE, the largest single gain.</dd>
+          </div>
+          <div class="fact">
+            <dt>5 examples</dt>
+            <dd>are enough to land within a point of an update written from 800.</dd>
+          </div>
+        </dl>
+        <p class="post-cta soon">Coming soon</p>
+      </article>
+    </section>
+
+    <section class="block" id="research" aria-labelledby="research-h">
+      <h2 id="research-h">Research</h2>
+      <ol class="path">
+        <li class="step step--now">
+          <p class="step-when">Now</p>
+          <h3>Weight-space prediction</h3>
+          <p>Models that generate other models. A meta-model reads a task description or a few examples and produces a weight update for a base model in one forward pass, with no gradient steps. I'm interested in what such a map can learn, why it should exist at all, and where it breaks.</p>
+        </li>
+        <li class="step">
+          <p class="step-when">IBM Research</p>
+          <h3>Multimodal models and their integration</h3>
+          <p>Getting models of different modalities to work as one. I worked on the Granite Vision team, on the vision-language model of the IBM Granite family. Earlier, I worked on aligning biomedical encoders to large language models so they can reason over proteins and molecules alongside text (<a href="https://arxiv.org/abs/2510.01428">BioVERSE</a>), and on fusing protein language models, LLMs and 3D structural models into unified protein representations.</p>
+        </li>
+        <li class="step">
+          <p class="step-when">IBM Research</p>
+          <h3>Foundation models for drug discovery</h3>
+          <p>Biomedical foundation models across proteins, small molecules and genes: protein language models (<a href="https://arxiv.org/abs/2410.22367">MAMMAL</a>), latent-variable transformers for controllable molecule generation (<a href="https://arxiv.org/abs/2511.02769">STAR-VAE</a>), and diffusion models for biomolecular structure prediction and design.</p>
+        </li>
+        <li class="step">
+          <p class="step-when">MSc, Tel Aviv University</p>
+          <h3>Adversarial machine learning</h3>
+          <p>Robustness of face recognition to semantic attacks, where the adversary changes attributes such as age or pose instead of adding pixel noise. We built BoundStyle, an attack in StyleGAN's latent space that runs about 9.5 times faster than earlier attacks, and <a href="https://arxiv.org/abs/2609.23596">StyleAT</a>, an adversarial training scheme that uses it to defend against attacks it has not seen.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block" id="publications" aria-labelledby="pubs-h">
+      <h2 id="pubs-h">Publications</h2>
+      <ul class="pubs">
+        <li>
+          <h3><a href="https://arxiv.org/abs/2609.23596">StyleAT: Defending Face Recognition Against Semantic Attacks</a></h3>
+          <p class="authors"><b>Ben Shapira</b>, Roi Cohen, Shang-Tse Chen, Mahmood Sharif</p>
+          <p class="pub-meta"><span>BMVC 2026</span> <a href="https://arxiv.org/abs/2609.23596">arXiv</a></p>
+        </li>
+        <li>
+          <h3><a href="https://arxiv.org/abs/2410.22367">MAMMAL: Molecular Aligned Multi-Modal Architecture and Language for Biomedical Discovery</a></h3>
+          <p class="authors">Yoel Shoshan, Moshiko Raboh, Michal Ozery-Flato, Vadim Ratner, Alex Golts, Jeffrey K. Weber, …, <b>Ben Shapira</b>, …, Michal Rosen-Zvi, Efrat Hexter</p>
+          <p class="pub-meta"><span>npj Drug Discovery, 2026</span> <a href="https://arxiv.org/abs/2410.22367">arXiv</a> <a href="https://github.com/BiomedSciAI/biomed-multi-alignment">Code</a></p>
+        </li>
+        <li>
+          <h3><a href="https://arxiv.org/abs/2511.02769">STAR-VAE: A Scalable Latent-Variable Transformer for Controllable Molecular Generation</a></h3>
+          <p class="authors">Bum Chul Kwon, <b>Ben Shapira</b>, Moshiko Raboh, Shreyans Sethi, Shruti Murarka, Joseph A. Morrone, Leili Zhang, Wendy Cornell, Jianying Hu, Parthasarathy Suryanarayanan</p>
+          <p class="pub-meta"><span>Preprint, 2025</span> <a href="https://arxiv.org/abs/2511.02769">arXiv</a></p>
+        </li>
+        <li>
+          <h3><a href="https://arxiv.org/abs/2510.01428">BioVERSE: Representation Alignment of Biomedical Modalities to LLMs for Multi-Modal Reasoning</a></h3>
+          <p class="authors">Ching-Huei Tsou, Michal Ozery-Flato, Ella Barkan, Diwakar Mahajan, <b>Ben Shapira</b></p>
+          <p class="pub-meta"><span>Preprint, 2025</span> <a href="https://arxiv.org/abs/2510.01428">arXiv</a></p>
+        </li>
+      </ul>
+
+      <div class="talks">
+        <h3 class="talks-h">Talks and abstracts</h3>
+        <ul class="talks-list">
+          <li>
+            <p class="talk-title">Cross-Modal Fusion of Protein Language Models, Large Language Models, and 3D Structural Models for Unified Protein Representations</p>
+            <p class="authors"><b>Ben Shapira</b>, Michal Ozery-Flato, Moshiko Raboh, Ching-Huei Tsou, Ella Barkan, Diwakar Mahajan. ACS Spring 2026.</p>
+          </li>
+          <li>
+            <p class="talk-title">Principled Latent-Variable Modeling Enables Efficient Conditional Molecular Design</p>
+            <p class="authors">Parthasarathy Suryanarayanan, Bum Chul Kwon, <b>Ben Shapira</b>, Moshiko Raboh, Joseph A. Morrone. ACS Spring 2026.</p>
+          </li>
+          <li>
+            <p class="talk-title">BioVERSE: A Modular Framework for Integrating Biomedical Modalities with Language Models in Precision Medicine</p>
+            <p class="authors">Ching-Huei Tsou, Michal Ozery-Flato, Yoav Kan-Tor, Bharath Dandala, <b>Ben Shapira</b>, Diwakar Mahajan, et al. ISMB 2025.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p>© 2026 Ben Shapira</p>
+    </footer>
+
+  </main>
+</div>
+
+</body>
+</html>
