@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>Ben Shapira - AI researcher</title>
-<meta name="description" content="Ben Shapira is an AI researcher working on foundation models and weight-space prediction: models whose output is another model. Previously at IBM Research.">
+<title>Ben Shapira - AI Researcher</title>
+<meta name="description" content="Ben Shapira is an AI researcher working on weight-space prediction, models that generate other models, and on foundation models. Previously at IBM Research.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ben Shapira - AI researcher">
+<meta property="og:title" content="Ben Shapira - AI Researcher">
 <meta property="og:description" content="AI researcher working on foundation models and weight-space prediction. Previously at IBM Research.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@Bensha6757">
@@ -21,34 +21,43 @@
 <body>
 <a class="skip" href="#content">Skip to content</a>
 
-<div class="page">
-
-  <header class="panel">
-    <div class="panel-id">
-      <h1>Ben Shapira</h1>
-      <p class="role">AI researcher</p>
+<header class="band">
+  <div class="wrap">
+    <div class="top">
+      <a class="name" href="#">Ben Shapira</a>
+      <nav aria-label="Sections">
+        <ul class="top-links">
+          <li><a href="#writing">Writing</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+        </ul>
+      </nav>
     </div>
-    <img class="portrait" src="assets/ben.jpg" width="734" height="1176" alt="Portrait of Ben Shapira">
-    <ul class="panel-links" aria-label="Profiles">
-      <li><a href="https://scholar.google.com/citations?user=-m0Uq80AAAAJ&amp;hl=en" rel="me noopener">Google Scholar</a></li>
-      <li><a href="https://x.com/Bensha6757" rel="me noopener">X</a></li>
-      <li><a href="https://www.linkedin.com/in/benshapiraa/" rel="me noopener">LinkedIn</a></li>
-    </ul>
-  </header>
+    <h1>AI Researcher, working on models that generate other models.</h1>
+    <p class="sub">Weight-space prediction and foundation models. Previously at IBM Research, on the Granite Vision team and in drug discovery.</p>
+  </div>
+</header>
 
-  <main class="content" id="content">
+<main class="wrap" id="content">
 
-    <section class="about" aria-labelledby="about-h">
-      <h2 class="visually-hidden" id="about-h">About</h2>
-      <p class="lead">I work on foundation models. Lately, that means models whose output is another model.</p>
-      <div class="prose">
-        <p>My current research is weight-space prediction: training neural networks to generate the weights of other networks. Teaching a model a new task usually means fine-tuning it over thousands of gradient steps. I study whether a second model can learn that process and produce the result directly, from a short description of the task or a handful of examples.</p>
-        <p>Before this, I was at IBM Research, where I worked on foundation models. I started in drug discovery, on protein language models (<a href="https://arxiv.org/abs/2410.22367">MAMMAL</a>) and on diffusion models for structure prediction and design, and later joined the Granite Vision team, working on the vision-language model of the IBM Granite family. A recurring theme was getting different modalities to work together inside one model.</p>
-        <p>I did my MSc at Tel Aviv University, on adversarial machine learning and the robustness of face recognition (<a href="https://arxiv.org/abs/2609.23596">StyleAT</a>, BMVC 2026).</p>
+    <section class="row row--about" id="about" aria-labelledby="about-h">
+      <h2 id="about-h">About</h2>
+      <div class="about">
+        <div class="prose">
+          <p>My current research is weight-space prediction: training neural networks to generate the weights of other networks. Teaching a model a new task usually means fine-tuning it over thousands of gradient steps. I study whether a second model can learn that process and produce the result directly, from a short description of the task or a handful of examples.</p>
+          <p>Before this, I was at IBM Research, where I worked on foundation models. I started in drug discovery, on protein language models (<a href="https://arxiv.org/abs/2410.22367">MAMMAL</a>) and on diffusion models for structure prediction and design. I then joined the Granite Vision team, which builds the vision-language model of the IBM Granite family. A recurring theme was getting different modalities to work together inside one model.</p>
+          <p>I did my MSc at Tel Aviv University, on adversarial machine learning and the robustness of face recognition (<a href="https://arxiv.org/abs/2609.23596">StyleAT</a>, BMVC 2026).</p>
+          <ul class="links" aria-label="Profiles">
+            <li><a href="https://scholar.google.com/citations?user=-m0Uq80AAAAJ&amp;hl=en" rel="me noopener">Google Scholar</a></li>
+            <li><a href="https://x.com/Bensha6757" rel="me noopener">X</a></li>
+            <li><a href="https://www.linkedin.com/in/benshapiraa/" rel="me noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+        <img class="portrait" src="assets/ben.jpg" width="734" height="1176" alt="Portrait of Ben Shapira">
       </div>
     </section>
 
-    <section class="block" id="writing" aria-labelledby="writing-h">
+    <section class="row" id="writing" aria-labelledby="writing-h">
       <h2 id="writing-h">Latest writing</h2>
       <article class="post">
         <p class="post-meta"><span class="tag">New</span> November 2026, with Roi Cohen</p>
@@ -76,7 +85,7 @@
       </article>
     </section>
 
-    <section class="block" id="research" aria-labelledby="research-h">
+    <section class="row" id="research" aria-labelledby="research-h">
       <h2 id="research-h">Research</h2>
       <ol class="path">
         <li class="step step--now">
@@ -85,12 +94,17 @@
           <p>Models that generate other models. A meta-model reads a task description or a few examples and produces a weight update for a base model in one forward pass, with no gradient steps. I'm interested in what such a map can learn, why it should exist at all, and where it breaks.</p>
         </li>
         <li class="step">
-          <p class="step-when">IBM Research</p>
-          <h3>Multimodal models and their integration</h3>
-          <p>Getting models of different modalities to work as one. I worked on the Granite Vision team, on the vision-language model of the IBM Granite family. Earlier, I worked on aligning biomedical encoders to large language models so they can reason over proteins and molecules alongside text (<a href="https://arxiv.org/abs/2510.01428">BioVERSE</a>), and on fusing protein language models, LLMs and 3D structural models into unified protein representations.</p>
+          <p class="step-when">IBM Research, Granite Vision team</p>
+          <h3>Vision-language models</h3>
+          <p>I worked on Granite Vision, the vision-language model of the IBM Granite family, built to understand documents, charts and tables alongside text.</p>
         </li>
         <li class="step">
-          <p class="step-when">IBM Research</p>
+          <p class="step-when">IBM Research, drug discovery</p>
+          <h3>Multimodal integration</h3>
+          <p>Getting models of different modalities to work as one. I worked on aligning biomedical encoders to large language models so they can reason over proteins and molecules alongside text (<a href="https://arxiv.org/abs/2510.01428">BioVERSE</a>), and on fusing protein language models, LLMs and 3D structural models into unified protein representations.</p>
+        </li>
+        <li class="step">
+          <p class="step-when">IBM Research, drug discovery</p>
           <h3>Foundation models for drug discovery</h3>
           <p>Biomedical foundation models across proteins, small molecules and genes: protein language models (<a href="https://arxiv.org/abs/2410.22367">MAMMAL</a>), latent-variable transformers for controllable molecule generation (<a href="https://arxiv.org/abs/2511.02769">STAR-VAE</a>), and diffusion models for biomolecular structure prediction and design.</p>
         </li>
@@ -102,8 +116,9 @@
       </ol>
     </section>
 
-    <section class="block" id="publications" aria-labelledby="pubs-h">
+    <section class="row" id="publications" aria-labelledby="pubs-h">
       <h2 id="pubs-h">Publications</h2>
+      <div class="row-body">
       <ul class="pubs">
         <li>
           <h3><a href="https://arxiv.org/abs/2609.23596">StyleAT: Defending Face Recognition Against Semantic Attacks</a></h3>
@@ -144,14 +159,19 @@
           </li>
         </ul>
       </div>
+      </div>
     </section>
 
-    <footer class="foot">
-      <p>© 2026 Ben Shapira</p>
-    </footer>
+</main>
 
-  </main>
-</div>
+<footer class="foot wrap">
+  <p>© 2026 Ben Shapira</p>
+  <ul class="links">
+    <li><a href="https://scholar.google.com/citations?user=-m0Uq80AAAAJ&amp;hl=en" rel="me noopener">Google Scholar</a></li>
+    <li><a href="https://x.com/Bensha6757" rel="me noopener">X</a></li>
+    <li><a href="https://www.linkedin.com/in/benshapiraa/" rel="me noopener">LinkedIn</a></li>
+  </ul>
+</footer>
 
 </body>
 </html>
