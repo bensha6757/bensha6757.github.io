@@ -22,19 +22,7 @@
   --sans: "Geist", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --gutter: clamp(1.25rem, 0.5rem + 3.2vw, 2.75rem);
   --side: 11rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0c1220;
-    --surface: #131b31;
-    --ink: #eef0f5;
-    --text: #c0c7d6;
-    --mute: #8f98ad;
-    --line: rgba(238, 240, 245, 0.14);
-    --accent: #f08bb0;
-    --accent-soft: rgba(240, 139, 176, 0.14);
-  }
+  color-scheme: light;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
