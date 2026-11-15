@@ -79,7 +79,7 @@ a:hover { color: var(--accent); }
 .band {
   background: var(--band);
   color: var(--band-ink);
-  padding-bottom: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  padding-bottom: clamp(1.75rem, 1.25rem + 1.75vw, 2.625rem);
 }
 .band :focus-visible { outline-color: var(--band-accent); }
 
