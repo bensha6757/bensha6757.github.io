@@ -5,14 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Ben Shapira - AI Researcher</title>
-<meta name="description" content="Ben Shapira is an AI researcher working on weight-space prediction, models that generate other models, and on foundation models. Previously at IBM Research.">
+<meta name="description" content="Ben Shapira is an AI researcher working on foundation models, and on how models can improve themselves. Previously at IBM Research.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ben Shapira - AI Researcher">
-<meta property="og:description" content="AI researcher working on foundation models and weight-space prediction. Previously at IBM Research.">
+<meta property="og:description" content="AI researcher working on foundation models, and on how models can improve themselves. Previously at IBM Research.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@Bensha6757">
 <meta name="theme-color" content="#131b31">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23131b31'/%3E%3Ctext x='16' y='22.5' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' text-anchor='middle' fill='%23f08bb0'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
@@ -34,7 +37,7 @@
     </div>
     <h1>Ben Shapira</h1>
     <div class="band-foot">
-      <p class="sub"><span class="role">AI Researcher</span> working on weight-space prediction and foundation models. Previously at IBM Research, on the Granite Vision team and in drug discovery.</p>
+      <p class="sub"><span class="role">AI Researcher</span> working on foundation models, and on how models can improve themselves. Previously at IBM Research, on the Granite Vision team and in drug discovery.</p>
       <!-- Icons: Font Awesome Free 6.7.2 (https://fontawesome.com, CC BY 4.0) -->
       <ul class="social" aria-label="Contact and profiles">
         <li><a href="https://scholar.google.com/citations?user=-m0Uq80AAAAJ&amp;hl=en" rel="me noopener" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></a></li>
@@ -52,9 +55,9 @@
       <h2 id="about-h">About</h2>
       <div class="about">
         <div class="prose">
-          <p>My current research is weight-space prediction: training neural networks to generate the weights of other networks. Teaching a model a new task usually means fine-tuning it over thousands of gradient steps. I study whether a second model can learn that process and produce the result directly, from a short description of the task or a handful of examples.</p>
-          <p>Before this, I was at IBM Research, where I worked on foundation models. I started in drug discovery, on protein language models (<a href="https://arxiv.org/abs/2410.22367">MAMMAL</a>) and on diffusion models for structure prediction and design. I then joined the Granite Vision team, which builds the vision-language model of the IBM Granite family. A recurring theme was getting different modalities to work together inside one model.</p>
-          <p>I did my MSc at Tel Aviv University, on adversarial machine learning and the robustness of face recognition (<a href="https://arxiv.org/abs/2609.23596">StyleAT</a>, BMVC 2026).</p>
+          <p>Hi! I am researching a lot of cool AI stuff at the moment. My current focus is how models can improve themselves: adapting a model to fit the task in front of it. I study whether a dedicated model can actually understand the high-dimensional space of another model's weights and adapt and improve the model in real time.</p>
+          <p>Before this, I was at IBM Research, where I worked on foundation models. I started in drug discovery, worked on foundation models for cross-modal learning (<a href="https://arxiv.org/abs/2410.22367">MAMMAL</a>) and on diffusion models for structure prediction and design, where we pre-trained our foundation models on billions of samples. I then joined the Granite Vision team, which builds the vision-language model of the IBM Granite family. A recurring theme was getting different modalities to work together inside one model.</p>
+          <p>I did my MSc at Tel Aviv University, advised by Prof. Mahmood Sharif, on adversarial machine learning in computer vision and the robustness of face recognition (<a href="https://arxiv.org/abs/2609.23596">StyleAT</a>, BMVC 2026).</p>
         </div>
         <img class="portrait" src="assets/ben.jpg?v=3" width="665" height="1172" alt="Portrait of Ben Shapira">
       </div>
@@ -93,25 +96,29 @@
       <ol class="path">
         <li class="step step--now">
           <p class="step-when">Now</p>
-          <h3>Weight-space prediction</h3>
-          <p>Models that generate other models. A meta-model reads a task description or a few examples and produces a weight update for a base model in one forward pass, with no gradient steps. I'm interested in what such a map can learn, why it should exist at all, and where it breaks.</p>
+          <h3>How models can improve themselves</h3>
+          <p>Adapting a model to the task in front of it. My current step: a meta-model reads a task description or a few examples and produces a weight update for a base model in one forward pass, with no gradient steps. I'm interested in what such a map can learn, why it should exist at all, and where it breaks.</p>
         </li>
-        <li class="step">
+        <li class="step step--logo step--wide">
+          <img class="step-logo step-logo--wide" src="assets/granite-wide.png" width="395" height="105" alt="IBM Granite">
           <p class="step-when">IBM Research, Granite Vision team</p>
           <h3>Vision-language models</h3>
           <p>I worked on Granite Vision, the vision-language model of the IBM Granite family, built to understand documents, charts and tables alongside text.</p>
         </li>
-        <li class="step">
+        <li class="step step--logo">
+          <img class="step-logo" src="assets/ibm.png" width="108" height="45" alt="IBM Research">
           <p class="step-when">IBM Research, drug discovery</p>
           <h3>Multimodal integration</h3>
-          <p>Getting models of different modalities to work as one. I worked on aligning biomedical encoders to large language models so they can reason over proteins and molecules alongside text (<a href="https://arxiv.org/abs/2510.01428">BioVERSE</a>), and on fusing protein language models, LLMs and 3D structural models into unified protein representations.</p>
+          <p>Getting models of different modalities to work as one. I worked on aligning biomedical encoders to large language models so they can reason over proteins and molecules alongside text, and on fusing protein language models, LLMs and 3D structural models into unified protein representations.</p>
         </li>
-        <li class="step">
+        <li class="step step--logo">
+          <img class="step-logo" src="assets/ibm.png" width="108" height="45" alt="IBM Research">
           <p class="step-when">IBM Research, drug discovery</p>
           <h3>Foundation models for drug discovery</h3>
-          <p>Biomedical foundation models across proteins, small molecules and genes: protein language models (<a href="https://arxiv.org/abs/2410.22367">MAMMAL</a>), latent-variable transformers for controllable molecule generation (<a href="https://arxiv.org/abs/2511.02769">STAR-VAE</a>), and diffusion models for biomolecular structure prediction and design.</p>
+          <p>Biomedical foundation models across proteins, small molecules and genes: a multi-aligned foundation model that handles all three in one architecture (<a href="https://arxiv.org/abs/2410.22367">MAMMAL</a>), latent-variable transformers for controllable molecule generation (<a href="https://arxiv.org/abs/2511.02769">STAR-VAE</a>), and diffusion models for biomolecular structure prediction and design.</p>
         </li>
-        <li class="step">
+        <li class="step step--logo">
+          <img class="step-logo" src="assets/tau.png" width="360" height="155" alt="Tel Aviv University">
           <p class="step-when">MSc, Tel Aviv University</p>
           <h3>Adversarial machine learning</h3>
           <p>Robustness of face recognition to semantic attacks, where the adversary changes attributes such as age or pose instead of adding pixel noise. We built BoundStyle, an attack in StyleGAN's latent space that runs about 9.5 times faster than earlier attacks, and <a href="https://arxiv.org/abs/2609.23596">StyleAT</a>, an adversarial training scheme that uses it to defend against attacks it has not seen.</p>
@@ -143,25 +150,12 @@
           <p class="authors">Ching-Huei Tsou, Michal Ozery-Flato, Ella Barkan, Diwakar Mahajan, <b>Ben Shapira</b></p>
           <p class="pub-meta"><span>Preprint, 2025</span> <a href="https://arxiv.org/abs/2510.01428">arXiv</a></p>
         </li>
+        <li>
+          <h3>Cross-Modal Fusion of Protein Language Models, Large Language Models, and 3D Structural Models for Unified Protein Representations</h3>
+          <p class="authors"><b>Ben Shapira</b>, Michal Ozery-Flato, Moshiko Raboh, Ching-Huei Tsou, Ella Barkan, Diwakar Mahajan</p>
+          <p class="pub-meta"><span>Abstract, ACS Spring 2026</span></p>
+        </li>
       </ul>
-
-      <div class="talks">
-        <h3 class="talks-h">Talks and abstracts</h3>
-        <ul class="talks-list">
-          <li>
-            <p class="talk-title">Cross-Modal Fusion of Protein Language Models, Large Language Models, and 3D Structural Models for Unified Protein Representations</p>
-            <p class="authors"><b>Ben Shapira</b>, Michal Ozery-Flato, Moshiko Raboh, Ching-Huei Tsou, Ella Barkan, Diwakar Mahajan. ACS Spring 2026.</p>
-          </li>
-          <li>
-            <p class="talk-title">Principled Latent-Variable Modeling Enables Efficient Conditional Molecular Design</p>
-            <p class="authors">Parthasarathy Suryanarayanan, Bum Chul Kwon, <b>Ben Shapira</b>, Moshiko Raboh, Joseph A. Morrone. ACS Spring 2026.</p>
-          </li>
-          <li>
-            <p class="talk-title">BioVERSE: A Modular Framework for Integrating Biomedical Modalities with Language Models in Precision Medicine</p>
-            <p class="authors">Ching-Huei Tsou, Michal Ozery-Flato, Yoav Kan-Tor, Bharath Dandala, <b>Ben Shapira</b>, Diwakar Mahajan, et al. ISMB 2025.</p>
-          </li>
-        </ul>
-      </div>
       </div>
     </section>
 

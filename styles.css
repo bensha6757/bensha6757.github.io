@@ -298,6 +298,19 @@ a:hover { color: var(--accent); }
 }
 .step > p:last-child { max-width: 62ch; }
 
+/* Logos sit in a fixed slot to the right of each story. */
+.step--logo { padding-right: 7rem; }
+.step-logo {
+  position: absolute;
+  top: 0.15rem;
+  right: 0;
+  width: 4.75rem;
+  height: auto;
+}
+/* The Granite lockup carries its name, so it gets a wider slot. */
+.step--wide { padding-right: 10.5rem; }
+.step-logo--wide { width: 8.25rem; }
+
 /* ---------- Publications ---------- */
 
 .pubs li + li { margin-top: 1.9rem; }
@@ -323,10 +336,6 @@ a:hover { color: var(--accent); }
   color: var(--text);
 }
 
-.talks { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
-.talks-h { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 1rem; }
-.talks-list li + li { margin-top: 1.25rem; }
-.talk-title { color: var(--ink); line-height: 1.5; max-width: 60ch; }
 
 /* ---------- Footer ---------- */
 
@@ -356,6 +365,9 @@ a:hover { color: var(--accent); }
   .top-links { gap: 0.3rem 1.15rem; }
   .facts { grid-template-columns: minmax(0, 1fr); }
   .fact--main { grid-row: auto; }
+  .step--logo { padding-right: 0; }
+  .step-logo { position: static; width: 3.75rem; margin-bottom: 0.6rem; }
+  .step-logo--wide { width: 7rem; }
 }
 
 @media print {
