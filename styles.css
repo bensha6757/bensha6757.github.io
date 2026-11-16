@@ -181,83 +181,9 @@ a:hover { color: var(--accent); }
   font-weight: 500;
 }
 
-/* ---------- Latest writing ---------- */
+/* ---------- Blog: a plain list of posts, styled like publications ---------- */
 
-.post {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
-}
-.post-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4rem 0.75rem;
-  font-size: 0.9375rem;
-  color: var(--mute);
-}
-.tag {
-  display: inline-block;
-  padding: 0.1rem 0.65rem;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  line-height: 1.6;
-}
-.post-title {
-  font-family: var(--display);
-  font-size: clamp(1.6rem, 1.15rem + 1.7vw, 2.3rem);
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-  color: var(--ink);
-  margin: 0.9rem 0 1rem;
-  max-width: 26ch;
-  text-wrap: balance;
-}
-.post-title a { text-decoration-color: transparent; }
-.post-title a:hover { text-decoration-color: var(--accent); }
-.post-summary { max-width: 60ch; }
-
-.facts {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  gap: 1.5rem clamp(1.5rem, 4vw, 3rem);
-  margin-top: 2rem;
-  padding-top: 1.75rem;
-  border-top: 1px solid var(--line);
-}
-.fact--main { grid-row: span 2; }
-.fact dt {
-  font-family: var(--display);
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-.fact--main dt { font-size: clamp(2.6rem, 1.8rem + 3vw, 3.75rem); line-height: 1; color: var(--accent); }
-.fact dd { margin-top: 0.4rem; font-size: 0.9375rem; line-height: 1.55; color: var(--mute); max-width: 34ch; }
-.fact--main dd { margin-top: 0.7rem; }
-
-.post-cta { margin-top: 2rem; font-size: 0.9375rem; color: var(--mute); }
-.button {
-  display: inline-block;
-  padding: 0.55rem 1.2rem;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--bg);
-  font-weight: 500;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.button:hover { background: var(--accent); color: #fff; }
-.button:active { transform: translateY(1px); }
+.post-summary { margin-top: 0.3rem; max-width: 62ch; }
 
 /* ---------- Research path ---------- */
 
@@ -363,8 +289,6 @@ a:hover { color: var(--accent); }
   .about { grid-template-columns: minmax(0, 1fr); }
   .portrait { order: -1; width: min(58%, 13.5rem); }
   .top-links { gap: 0.3rem 1.15rem; }
-  .facts { grid-template-columns: minmax(0, 1fr); }
-  .fact--main { grid-row: auto; }
   .step--logo { padding-right: 0; }
   .step-logo { position: static; width: 3.75rem; margin-bottom: 0.6rem; }
   .step-logo--wide { width: 7rem; }
